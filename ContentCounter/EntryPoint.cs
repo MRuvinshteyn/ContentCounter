@@ -9,10 +9,14 @@ namespace ContentCounter
         {
             foreach (Track track in vegas.Project.Tracks)
             {
-                double totalLength = 0;
+                Timecode totalLength = new Timecode();
                 foreach (TrackEvent trackEvent in track.Events)
                 {
-                    totalLength += trackEvent.Length.ToMilliseconds();
+                    if (trackEvent.Start >= vegas.SelectionStart + vegas.SelectionLength)
+                    {
+                        break;
+                    }
+                    totalLength += trackEvent.Length;
                 }
                 MessageBox.Show(totalLength.ToString());
             }
