@@ -12,7 +12,11 @@ namespace ContentCounter
                 Timecode totalLength = new Timecode();
                 foreach (TrackEvent trackEvent in track.Events)
                 {
-                    if (trackEvent.Start >= vegas.SelectionStart + vegas.SelectionLength)
+                    if (trackEvent.Start < vegas.SelectionStart)
+                    {
+                        continue;
+                    }
+                    if (trackEvent.Start + trackEvent.Length > vegas.SelectionStart + vegas.SelectionLength)
                     {
                         break;
                     }
