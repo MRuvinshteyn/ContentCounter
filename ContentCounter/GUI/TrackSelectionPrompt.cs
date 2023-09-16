@@ -12,14 +12,14 @@ namespace ContentCounter.GUI
 {
     public partial class TrackSelectionPrompt : Form
     {
-        public TrackSelectionPrompt()
-        {
-            InitializeComponent();
-        }
-
         public TrackSelectionPrompt(IEnumerable<string> tracks)
         {
             InitializeComponent();
+
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+
+            trackList.Items.AddRange(tracks.ToArray());
+            trackList.Height = trackList.ItemHeight * (trackList.Items.Count + 1);
         }
     }
 }

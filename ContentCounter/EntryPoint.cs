@@ -9,7 +9,6 @@ namespace ContentCounter
     {
         public void FromVegas(Vegas vegas)
         {
-            MessageBox.Show(vegas.Project.Tracks.Count.ToString());
             TrackSelectionPrompt prompt = new TrackSelectionPrompt(vegas.Project.Tracks.Select(track => track.Name));
             prompt.Show();
             //foreach (Track track in vegas.Project.Tracks)
