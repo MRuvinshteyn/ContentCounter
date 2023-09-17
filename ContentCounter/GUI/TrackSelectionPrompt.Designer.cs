@@ -35,28 +35,31 @@ namespace ContentCounter.GUI
             // 
             // trackList
             // 
+            this.trackList.CheckOnClick = true;
             this.trackList.FormattingEnabled = true;
             this.trackList.Location = new System.Drawing.Point(13, 13);
             this.trackList.Name = "trackList";
-            this.trackList.Size = new System.Drawing.Size(194, 94);
+            this.trackList.Size = new System.Drawing.Size(194, 154);
             this.trackList.TabIndex = 0;
             // 
             // submitButton
             // 
             this.submitButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.submitButton.Location = new System.Drawing.Point(0, 129);
+            this.submitButton.Location = new System.Drawing.Point(0, 188);
+            this.submitButton.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(219, 23);
             this.submitButton.TabIndex = 1;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // TrackSelectionPrompt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(219, 152);
+            this.ClientSize = new System.Drawing.Size(219, 211);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.trackList);
             this.Name = "TrackSelectionPrompt";

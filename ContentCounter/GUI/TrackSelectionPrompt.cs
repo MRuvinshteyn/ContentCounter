@@ -19,7 +19,16 @@ namespace ContentCounter.GUI
             FormBorderStyle = FormBorderStyle.FixedSingle;
 
             trackList.Items.AddRange(tracks.ToArray());
-            trackList.Height = trackList.ItemHeight * (trackList.Items.Count + 1);
+        }
+
+        private void submitButton_Click(object sender, EventArgs e)
+        {
+            List<int> indices = new List<int>();
+            foreach (object track in trackList.CheckedItems)
+            {
+                indices.Add(trackList.Items.IndexOf(track));
+            }
+            MessageBox.Show(string.Join(", ", indices));
         }
     }
 }
