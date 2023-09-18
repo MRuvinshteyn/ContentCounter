@@ -53,11 +53,20 @@
     <Compile Include="GUI\TrackSelectionPrompt.Designer.cs">
       <DependentUpon>TrackSelectionPrompt.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\TrackStatsPrompt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TrackStatsPrompt.Designer.cs">
+      <DependentUpon>TrackStatsPrompt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="GUI\TrackSelectionPrompt.resx">
       <DependentUpon>TrackSelectionPrompt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TrackStatsPrompt.resx">
+      <DependentUpon>TrackStatsPrompt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

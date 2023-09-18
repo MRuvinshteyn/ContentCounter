@@ -1,24 +1,23 @@
-﻿using System;
+﻿using ScriptPortal.Vegas;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ContentCounter.GUI
 {
     public partial class TrackSelectionPrompt : Form
     {
-        public TrackSelectionPrompt(IEnumerable<string> tracks)
+        private Vegas vegas;
+        public TrackSelectionPrompt(Vegas vegas)
         {
             InitializeComponent();
 
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.vegas = vegas;
 
-            trackList.Items.AddRange(tracks.ToArray());
+            trackList.Items.AddRange(
+                vegas.Project.Tracks.Select((track, index) => $"Track {index + 1}: {track.Name}").ToArray());
         }
 
         private void submitButton_Click(object sender, EventArgs e)
@@ -28,7 +27,8 @@ namespace ContentCounter.GUI
             {
                 indices.Add(trackList.Items.IndexOf(track));
             }
-            MessageBox.Show(string.Join(", ", indices));
+            var prompt = new TrackStatsPrompt(vegas, indices);
+            prompt.Show();
         }
     }
 }
