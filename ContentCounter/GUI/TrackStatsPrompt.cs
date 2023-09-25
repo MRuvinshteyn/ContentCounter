@@ -35,25 +35,42 @@ namespace ContentCounter.GUI
                     trackNameLabel.Font = new Font(trackNameLabel.Font.FontFamily, trackNameLabel.Font.Size - 0.5f, trackNameLabel.Font.Style);
                 }
 
-                Timecode totalLength = new Timecode();
+                Timecode totalLength = new Timecode(),
+                         cursorLength = new Timecode(),
+                         selectionLength = new Timecode();
                 foreach (TrackEvent trackEvent in track.Events)
                 {
-                    //if (trackEvent.Start < vegas.SelectionStart)
-                    //{
-                    //    continue;
-                    //}
-                    //if (trackEvent.Start + trackEvent.Length > vegas.SelectionStart + vegas.SelectionLength)
-                    //{
-                    //    break;
-                    //}
                     totalLength += trackEvent.Length;
+
+                    if (trackEvent.Start + trackEvent.Length <= vegas.Transport.CursorPosition)
+                    {
+                        cursorLength += trackEvent.Length;
+                    }
+
+                    if (trackEvent.Start >= vegas.SelectionStart &&
+                        trackEvent.Start + trackEvent.Length <= vegas.SelectionStart + vegas.SelectionLength)
+                    {
+                        selectionLength += trackEvent.Length;
+                    }
                 }
+
                 statsTable.Controls.Add(
-                    new Label() { 
+                    new Label() {
                         Text = totalLength.ToString(), 
                         Anchor = AnchorStyles.None 
                     }, 1, statsTable.RowCount - 1);
-                //MessageBox.Show($"{track.Name}: {totalLength}");
+
+                statsTable.Controls.Add(
+                    new Label() {
+                        Text = cursorLength.ToString(), 
+                        Anchor = AnchorStyles.None 
+                    }, 2, statsTable.RowCount - 1);
+
+                statsTable.Controls.Add(
+                    new Label() {
+                        Text = selectionLength.ToString(), 
+                        Anchor = AnchorStyles.None 
+                    }, 3, statsTable.RowCount - 1);
             }
         }
     }

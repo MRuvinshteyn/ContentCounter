@@ -42,10 +42,10 @@ namespace ContentCounter.GUI
             this.statsTable.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.statsTable.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.statsTable.ColumnCount = 4;
-            this.statsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 194F));
-            this.statsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 194F));
-            this.statsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 194F));
-            this.statsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 214F));
+            this.statsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.statsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.statsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.statsTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.statsTable.Controls.Add(this.totalLengthLabel, 1, 0);
             this.statsTable.Controls.Add(this.trackLabel, 0, 0);
             this.statsTable.Controls.Add(this.cursorLengthLabel, 2, 0);
@@ -63,7 +63,7 @@ namespace ContentCounter.GUI
             this.trackLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.trackLabel.AutoSize = true;
             this.trackLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.trackLabel.Location = new System.Drawing.Point(65, 24);
+            this.trackLabel.Location = new System.Drawing.Point(64, 24);
             this.trackLabel.Name = "trackLabel";
             this.trackLabel.Size = new System.Drawing.Size(65, 26);
             this.trackLabel.TabIndex = 0;
@@ -75,7 +75,7 @@ namespace ContentCounter.GUI
             this.totalLengthLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.totalLengthLabel.AutoSize = true;
             this.totalLengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.totalLengthLabel.Location = new System.Drawing.Point(227, 24);
+            this.totalLengthLabel.Location = new System.Drawing.Point(224, 24);
             this.totalLengthLabel.Name = "totalLengthLabel";
             this.totalLengthLabel.Size = new System.Drawing.Size(131, 26);
             this.totalLengthLabel.TabIndex = 1;
@@ -87,7 +87,7 @@ namespace ContentCounter.GUI
             this.cursorLengthLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cursorLengthLabel.AutoSize = true;
             this.cursorLengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.cursorLengthLabel.Location = new System.Drawing.Point(401, 24);
+            this.cursorLengthLabel.Location = new System.Drawing.Point(396, 24);
             this.cursorLengthLabel.Name = "cursorLengthLabel";
             this.cursorLengthLabel.Size = new System.Drawing.Size(173, 26);
             this.cursorLengthLabel.TabIndex = 2;
@@ -99,7 +99,7 @@ namespace ContentCounter.GUI
             this.selectionLengthLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.selectionLengthLabel.AutoSize = true;
             this.selectionLengthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.selectionLengthLabel.Location = new System.Drawing.Point(622, 11);
+            this.selectionLengthLabel.Location = new System.Drawing.Point(606, 11);
             this.selectionLengthLabel.Name = "selectionLengthLabel";
             this.selectionLengthLabel.Size = new System.Drawing.Size(142, 52);
             this.selectionLengthLabel.TabIndex = 3;
